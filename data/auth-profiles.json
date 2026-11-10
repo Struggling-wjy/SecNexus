@@ -1,0 +1,19 @@
+[
+  {
+    "provider": "custom",
+    "profileId": "default",
+    "type": "api_key",
+    "apiKey": "49dcb2lrXpniNXqqYJ0sje3q0ZxWMZBtbvWpeAc2F9HWne28GfxAUgR4mjR5Ph0On",
+    "apiBaseOverride": "https://api.stepfun.com/step_plan/v1/",
+    "expiresAt": "0001-01-01T00:00:00Z",
+    "updatedAt": "2026-07-15T08:30:41.1430953Z"
+  },
+  {
+    "provider": "xiaomi",
+    "profileId": "default",
+    "type": "api_key",
+    "apiKey": "tp-ccedixmkxzg9iqewo20t9lq400i34a0dc64n425h17bqia7u",
+    "expiresAt": "0001-01-01T00:00:00Z",
+    "updatedAt": "2026-06-29T13:42:27.1629393Z"
+  }
+]
