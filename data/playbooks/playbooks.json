@@ -1,0 +1,390 @@
+[
+  {
+    "id": "pb-001",
+    "name": "恶意软件应急响应",
+    "description": "检测到恶意软件后的标准应急响应流程，包括隔离、清除和恢复步骤。",
+    "category": "malware",
+    "severity": "high",
+    "steps": [
+      {
+        "id": "s1",
+        "title": "确认告警",
+        "description": "验证恶意软件告警的真实性，收集IOC信息",
+        "type": "investigation",
+        "automated": false,
+        "estimated_time": "15分钟"
+      },
+      {
+        "id": "s2",
+        "title": "隔离感染主机",
+        "description": "立即断开受感染主机的网络连接",
+        "type": "containment",
+        "automated": true,
+        "estimated_time": "5分钟"
+      },
+      {
+        "id": "s3",
+        "title": "收集取证数据",
+        "description": "保存内存镜像、磁盘镜像和日志",
+        "type": "investigation",
+        "automated": false,
+        "estimated_time": "30分钟"
+      },
+      {
+        "id": "s4",
+        "title": "恶意软件分析",
+        "description": "在沙箱中分析恶意软件行为",
+        "type": "investigation",
+        "automated": true,
+        "estimated_time": "60分钟"
+      },
+      {
+        "id": "s5",
+        "title": "清除恶意软件",
+        "description": "使用杀毒工具清除恶意软件",
+        "type": "eradication",
+        "automated": true,
+        "estimated_time": "30分钟"
+      },
+      {
+        "id": "s6",
+        "title": "系统恢复",
+        "description": "从备份恢复系统，验证完整性",
+        "type": "recovery",
+        "automated": false,
+        "estimated_time": "120分钟"
+      },
+      {
+        "id": "s7",
+        "title": "编写报告",
+        "description": "编写事件响应报告并通知相关方",
+        "type": "notification",
+        "automated": false,
+        "estimated_time": "30分钟"
+      }
+    ],
+    "tags": [
+      "恶意软件",
+      "应急响应",
+      "标准流程"
+    ],
+    "source": "builtin",
+    "usage_count": 45,
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "pb-002",
+    "name": "SQL注入攻击处置",
+    "description": "检测到SQL注入攻击后的处置流程，包括漏洞修复和日志分析。",
+    "category": "intrusion",
+    "severity": "critical",
+    "steps": [
+      {
+        "id": "s1",
+        "title": "确认攻击",
+        "description": "分析WAF日志确认SQL注入攻击",
+        "type": "investigation",
+        "automated": true,
+        "estimated_time": "10分钟"
+      },
+      {
+        "id": "s2",
+        "title": "阻断攻击源",
+        "description": "在WAF中封禁攻击者IP",
+        "type": "containment",
+        "automated": true,
+        "estimated_time": "5分钟"
+      },
+      {
+        "id": "s3",
+        "title": "评估影响",
+        "description": "检查数据库是否被篡改或数据泄露",
+        "type": "investigation",
+        "automated": false,
+        "estimated_time": "30分钟"
+      },
+      {
+        "id": "s4",
+        "title": "修复漏洞",
+        "description": "修复应用程序中的SQL注入漏洞",
+        "type": "eradication",
+        "automated": false,
+        "estimated_time": "60分钟"
+      },
+      {
+        "id": "s5",
+        "title": "验证修复",
+        "description": "测试修复后的代码是否安全",
+        "type": "investigation",
+        "automated": true,
+        "estimated_time": "15分钟"
+      },
+      {
+        "id": "s6",
+        "title": "通知相关方",
+        "description": "通知开发团队和安全团队",
+        "type": "notification",
+        "automated": false,
+        "estimated_time": "10分钟"
+      }
+    ],
+    "tags": [
+      "SQL注入",
+      "Web安全",
+      "漏洞修复"
+    ],
+    "source": "builtin",
+    "usage_count": 32,
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "pb-003",
+    "name": "SSH暴力破解处置",
+    "description": "检测到SSH暴力破解攻击后的处置流程。",
+    "category": "intrusion",
+    "severity": "high",
+    "steps": [
+      {
+        "id": "s1",
+        "title": "确认攻击",
+        "description": "分析认证日志确认暴力破解",
+        "type": "investigation",
+        "automated": true,
+        "estimated_time": "5分钟"
+      },
+      {
+        "id": "s2",
+        "title": "封禁IP",
+        "description": "在防火墙中封禁攻击者IP",
+        "type": "containment",
+        "automated": true,
+        "estimated_time": "2分钟"
+      },
+      {
+        "id": "s3",
+        "title": "检查账户",
+        "description": "检查是否有账户被成功破解",
+        "type": "investigation",
+        "automated": true,
+        "estimated_time": "10分钟"
+      },
+      {
+        "id": "s4",
+        "title": "强制密码重置",
+        "description": "强制相关账户重置密码",
+        "type": "eradication",
+        "automated": false,
+        "estimated_time": "15分钟"
+      },
+      {
+        "id": "s5",
+        "title": "启用MFA",
+        "description": "为相关账户启用多因素认证",
+        "type": "recovery",
+        "automated": false,
+        "estimated_time": "20分钟"
+      }
+    ],
+    "tags": [
+      "暴力破解",
+      "SSH",
+      "认证安全"
+    ],
+    "source": "builtin",
+    "usage_count": 28,
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "pb-004",
+    "name": "钓鱼邮件处置",
+    "description": "检测到钓鱼邮件后的处置流程。",
+    "category": "phishing",
+    "severity": "medium",
+    "steps": [
+      {
+        "id": "s1",
+        "title": "确认钓鱼",
+        "description": "分析邮件头和内容确认钓鱼",
+        "type": "investigation",
+        "automated": true,
+        "estimated_time": "10分钟"
+      },
+      {
+        "id": "s2",
+        "title": "阻断邮件",
+        "description": "在邮件网关中阻断类似邮件",
+        "type": "containment",
+        "automated": true,
+        "estimated_time": "5分钟"
+      },
+      {
+        "id": "s3",
+        "title": "检查点击",
+        "description": "检查是否有员工点击了链接",
+        "type": "investigation",
+        "automated": true,
+        "estimated_time": "15分钟"
+      },
+      {
+        "id": "s4",
+        "title": "清除邮件",
+        "description": "从所有邮箱中清除钓鱼邮件",
+        "type": "eradication",
+        "automated": true,
+        "estimated_time": "10分钟"
+      },
+      {
+        "id": "s5",
+        "title": "安全培训",
+        "description": "对员工进行钓鱼识别培训",
+        "type": "recovery",
+        "automated": false,
+        "estimated_time": "30分钟"
+      }
+    ],
+    "tags": [
+      "钓鱼",
+      "邮件安全",
+      "社会工程"
+    ],
+    "source": "builtin",
+    "usage_count": 19,
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "pb-005",
+    "name": "XSS跨站脚本处置",
+    "description": "检测到XSS漏洞利用后的处置流程。",
+    "category": "vulnerability",
+    "severity": "high",
+    "steps": [
+      {
+        "id": "s1",
+        "title": "确认漏洞",
+        "description": "验证XSS漏洞的存在和影响范围",
+        "type": "investigation",
+        "automated": true,
+        "estimated_time": "10分钟"
+      },
+      {
+        "id": "s2",
+        "title": "阻断利用",
+        "description": "在WAF中添加XSS防护规则",
+        "type": "containment",
+        "automated": true,
+        "estimated_time": "5分钟"
+      },
+      {
+        "id": "s3",
+        "title": "修复代码",
+        "description": "对用户输入进行HTML编码和过滤",
+        "type": "eradication",
+        "automated": false,
+        "estimated_time": "45分钟"
+      },
+      {
+        "id": "s4",
+        "title": "安全测试",
+        "description": "进行XSS渗透测试验证修复",
+        "type": "investigation",
+        "automated": true,
+        "estimated_time": "20分钟"
+      },
+      {
+        "id": "s5",
+        "title": "部署上线",
+        "description": "部署修复后的代码并监控",
+        "type": "recovery",
+        "automated": false,
+        "estimated_time": "30分钟"
+      }
+    ],
+    "tags": [
+      "XSS",
+      "Web安全",
+      "前端安全"
+    ],
+    "source": "builtin",
+    "usage_count": 15,
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "pb-006",
+    "name": "数据泄露应急响应",
+    "description": "检测到数据泄露事件后的应急响应流程。",
+    "category": "data-breach",
+    "severity": "critical",
+    "steps": [
+      {
+        "id": "s1",
+        "title": "确认泄露",
+        "description": "确认数据泄露事件的真实性和范围",
+        "type": "investigation",
+        "automated": false,
+        "estimated_time": "30分钟"
+      },
+      {
+        "id": "s2",
+        "title": "阻断泄露渠道",
+        "description": "立即封堵数据外传通道",
+        "type": "containment",
+        "automated": true,
+        "estimated_time": "10分钟"
+      },
+      {
+        "id": "s3",
+        "title": "评估泄露数据",
+        "description": "确定泄露的数据类型、数量和敏感度",
+        "type": "investigation",
+        "automated": false,
+        "estimated_time": "60分钟"
+      },
+      {
+        "id": "s4",
+        "title": "溯源分析",
+        "description": "追踪攻击者路径和利用的漏洞",
+        "type": "investigation",
+        "automated": false,
+        "estimated_time": "120分钟"
+      },
+      {
+        "id": "s5",
+        "title": "修复漏洞",
+        "description": "修复被利用的漏洞",
+        "type": "eradication",
+        "automated": false,
+        "estimated_time": "90分钟"
+      },
+      {
+        "id": "s6",
+        "title": "合规报告",
+        "description": "按照法规要求向监管部门报告",
+        "type": "notification",
+        "automated": false,
+        "estimated_time": "60分钟"
+      },
+      {
+        "id": "s7",
+        "title": "持续监控",
+        "description": "加强监控防止二次泄露",
+        "type": "recovery",
+        "automated": true,
+        "estimated_time": "持续"
+      }
+    ],
+    "tags": [
+      "数据泄露",
+      "应急响应",
+      "合规"
+    ],
+    "source": "builtin",
+    "usage_count": 8,
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z"
+  }
+]

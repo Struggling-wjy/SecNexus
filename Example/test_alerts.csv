@@ -1,0 +1,13 @@
+﻿﻿标题,等级,来源,时间,源IP,目标IP,描述
+SQL Injection Attack Detected,严重,WAF,2026/6/22 10:30,192.168.1.100,10.0.0.1,检测到SQL注入攻击，攻击者尝试通过URL参数注入恶意SQL语句
+XSS Cross-Site Scripting,高危,IDS,2026/6/22 11:15,192.168.1.200,10.0.0.2,发现跨站脚本攻击，攻击者在输入框中注入恶意JavaScript代码
+SSH Brute Force Attack,高危,IDS,2026/6/22 12:00,192.168.1.150,10.0.0.5,SSH暴力破解攻击，短时间内大量登录失败尝试
+Port Scan Activity,中危,防火墙,2026/6/22 13:20,192.168.1.180,10.0.0.0/24,检测到端口扫描活动，扫描器正在探测目标主机开放端口
+Malware Communication,严重,EDR,2026/6/22 14:00,10.0.0.50,185.220.101.1,终端检测到恶意软件与C2服务器通信
+Suspicious DNS Query,中危,SIEM,2026/6/22 14:30,10.0.0.30,malware-domain.com,检测到可疑DNS查询，域名与已知恶意域名匹配
+DDoS Attack Detected,严重,DDoS防护,2026/6/22 15:00,多源IP,10.0.0.1,检测到分布式拒绝服务攻击，流量异常激增
+Unauthorized Access Attempt,高危,IAM,2026/6/22 15:45,192.168.1.220,10.0.0.10,检测到未授权访问尝试，用户权限异常提升
+Data Exfiltration Suspicion,严重,DLP,2026/6/22 16:10,10.0.0.35,外部云存储,疑似数据外泄，大量敏感数据传输至外部存储服务
+Normal System Update,低,系统监控,2026/6/22 17:00,10.0.0.1,update.server.com,常规系统更新操作
+Brute Force Login,高,Web应用,2026/6/22 17:30,203.0.113.50,10.0.0.2,Web应用登录接口暴力破解尝试
+VPN Anomaly Connection,中危,VPN网关,2026/6/22 18:00,198.51.100.25,10.0.0.1,VPN连接异常，同一账号多地同时登录
