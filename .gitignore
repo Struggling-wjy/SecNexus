@@ -1,0 +1,4 @@
+# 本地运行期凭据（含明文 API Key，严禁提交）
+data/auth-profiles.json
+data/auth-profiles.json.lock
+data/*.lock
